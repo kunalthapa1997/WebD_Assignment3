@@ -28,7 +28,7 @@ document.getElementById("addRow-button").addEventListener("click", function() {
 
     let newRow = document.createElement("tr");
     newRow.innerHTML = `
-    <td><input type="checkbox"/><br /><br /><img src="down.png" width="25px" /></td>
+    <td><input type="checkbox"/><br /><br /><img src="down.png" width="25px" onclick="expandRowInfo(this);"/></td>
     <td>Student ${counter}</td>
     <td>Teacher ${counter}</td>
 	<td>Approved</td>
@@ -39,6 +39,20 @@ document.getElementById("addRow-button").addEventListener("click", function() {
     `;
 
     document.getElementById("table-rows").appendChild(newRow);
+
+    let expandedRow = document.createElement("tr");
+    expandedRow.innerHTML = `
+    Advisor:<br /><br />
+    Award Details<br />
+    Summer 1-2014(TA)<br />
+    Budget Number: <br />
+    Tuition Number: <br />
+    Comments:<br /><br /><br />
+    Award Status:<br /><br /><br />
+    `;
+
+    document.getElementById("table-rows").appendChild(expandedRow);
+    expandedRow.style.display = "none";
     alert("New Record added Successfully");
 });
 
