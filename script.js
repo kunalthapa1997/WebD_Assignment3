@@ -19,10 +19,6 @@
 let counter = 3;
 let submitButtonCounter = 0;
 
-// const table = document.querySelector("table");
-// const secondLastTh = table.querySelector('th:nth-last-child(2)');
-// const lastTH = table.querySelector("th:last-child");
-
 document.getElementById("submit-button").style.backgroundColor ="gray";
 document.getElementById("submit-button").style.pointerEvents ="none";
 
@@ -71,12 +67,15 @@ document.getElementById("myTable").addEventListener("click", function(event) {
 
         let row = checkBox.parentNode.parentNode;
         let expandedRow = checkBox.parentNode.parentNode.nextElementSibling;
-        // secondLastTh.classList.add("showHeader");
-        // lastTH.classList.add("showHeader");
+
         //change row color on click of checkbox
         if(checkBox.checked){
             submitButtonCounter++;
 
+
+            document.querySelectorAll("tr")[0].querySelectorAll("th")[8].classList.remove("columnHide");
+            document.querySelectorAll("tr")[0].querySelectorAll("th")[9].classList.remove("columnHide");
+            
             const td1 = document.createElement('td');
             row.appendChild(td1);
 
@@ -95,7 +94,12 @@ document.getElementById("myTable").addEventListener("click", function(event) {
                 row.remove();
                 expandedRow.remove();
                 counter--;
-                alert("Record Deleted Successfully");
+                submitButtonCounter--;
+                if(counter === 0 || submitButtonCounter === 0) {
+                    document.querySelectorAll("tr")[0].querySelectorAll("th")[8].classList.add("columnHide");
+                    document.querySelectorAll("tr")[0].querySelectorAll("th")[9].classList.add("columnHide");
+                }
+                alert("Record of Student Deleted Successfully");
             });
 
             row.children[8].appendChild(deleteButton);
@@ -104,7 +108,7 @@ document.getElementById("myTable").addEventListener("click", function(event) {
             let editButton = document.createElement("button");
             editButton.innerHTML = "Edit";
             editButton.addEventListener("click", function() {
-                alert("Edit the details");
+                prompt("Edit the details:");
             });
             row.children[9].appendChild(editButton);
 
@@ -116,8 +120,10 @@ document.getElementById("myTable").addEventListener("click", function(event) {
             row.removeChild(row.lastChild);
 
             if(submitButtonCounter === 0) {
-                // secondLastTh.classList.add("hideHeader");
-                // lastTH.classList.add("hideHeader");
+
+                document.querySelectorAll("tr")[0].querySelectorAll("th")[8].classList.add("columnHide");
+                document.querySelectorAll("tr")[0].querySelectorAll("th")[9].classList.add("columnHide");
+
                 document.getElementById("submit-button").style.backgroundColor = "gray";
                 document.getElementById("submit-button").style.pointerEvents ="none";
             }

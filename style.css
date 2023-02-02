@@ -26,10 +26,6 @@ body {
     display: none;
   }
 
-  .hideHeader {
-    display: none;
-  }
-
-  .showHeader {
-    display:list-item;
+  #submit-button{
+    margin-left: 12rem;
   }

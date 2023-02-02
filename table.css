@@ -22,3 +22,7 @@
 	border:2px solid orange;
 	margin-left: 180px;
 }
+
+.columnHide{
+	display: none;
+}
