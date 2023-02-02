@@ -21,3 +21,7 @@ body {
   .socialmediaicons{
       text-align: center;
   }
+
+  .dropDownTextArea{
+    display: none;
+  }

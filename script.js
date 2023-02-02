@@ -89,3 +89,17 @@ document.getElementById("myTable").addEventListener("click", function(event) {
         }
     }
 });
+
+// expand and collapse feature on click on image
+
+function expandRowInfo(event) {
+    console.log(event);
+    var row = event.parentNode.parentNode.nextElementSibling;
+    if(row.style.display === "table-row") {
+        row.style.display = "none";
+        event.src = "down.png";
+    } else{
+        row.style.display = "table-row";
+        event.src = "up.jpeg"
+    }
+};

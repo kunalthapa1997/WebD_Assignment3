@@ -23,7 +23,7 @@
     </thead>
     <tbody id="table-rows">
 		<tr>
-			<td><input type="checkbox"/><br /><br /><img src="down.png" width="25px" onclick="expandRowInfo()"/></td>
+			<td><input type="checkbox"/><br /><br /><img src="down.png" width="25px" onclick="expandRowInfo(this);"/></td>
 			<td>Student 1</td>
 			<td>Teacher 1</td>
 			<td>Approved</td>
@@ -31,9 +31,8 @@
 			<td>TA</td>
 			<td>12345</td>
 			<td>100%</td>
-			<!-- <td></td> -->
 		</tr>
-		<tr class="dropDownTextArea"><td colspan="8">
+		<tr class="dropDownTextArea" id="expandedRow"><td colspan="8">
 			Advisor:<br /><br />
 			Award Details<br />
 			Summer 1-2014(TA)<br />
@@ -44,7 +43,7 @@
 		</td>
         </tr>
 		<tr>
-			<td><input type="checkbox"/><br /><br /><img src="down.png" width="25px" /></td>
+			<td><input type="checkbox"/><br /><br /><img src="down.png" width="25px" onclick="expandRowInfo(this);"/></td>
 			<td>Student 2</td>
 			<td>Teacher 2</td>
 			<td>Approved</td>
@@ -53,7 +52,7 @@
 			<td>23456</td>
 			<td>100%</td>
 		</tr>
-		<tr class="dropDownTextArea"><td colspan="8">
+		<tr class="dropDownTextArea" id="expandedRow"><td colspan="8">
 			Advisor:<br /><br />
 			Award Details<br />
 			Summer 1-2014(TA)<br />
@@ -64,7 +63,7 @@
 		</td>
         </tr>
 		<tr>
-			<td><input type="checkbox"/><br /><br /><img src="down.png" width="25px" /></td>
+			<td><input type="checkbox"/><br /><br /><img src="down.png" width="25px" onclick="expandRowInfo(this);"/></td>
 			<td>Student 3</td>
 			<td>Teacher 3</td>
 			<td>Approved</td>
@@ -72,9 +71,8 @@
 			<td>TA</td>
 			<td>34567</td>
 			<td>100%</td>
-			<!-- <td></td> -->
 		</tr>
-		<tr class="dropDownTextArea"><td colspan="8">
+		<tr class="dropDownTextArea" id="expandedRow"><td colspan="8">
 			Advisor:<br /><br />
 			Award Details<br />
 			Summer 1-2014(TA)<br />
