@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 
-<!-- Also read chapter 9 from slides - Regular Expressions -->
-
 <html>
 <head>
 	<title>Table CheckList</title>
@@ -11,6 +9,7 @@
 </head>
 <body>
 	<table id="myTable">
+    <thead>
 		<tr>
 			<th></th>
 			<th>STUDENT</th>
@@ -20,10 +19,11 @@
 			<th>TYPE</th>
 			<th>BUDGET<br />#</th>
 			<th>PERCENTAGE</th>
-			<th>DELETE</th>
 		</tr>
+    </thead>
+    <tbody id="table-rows">
 		<tr>
-			<td><input type="checkbox" /><br /><br /><img src="down.png" width="25px" /></td>
+			<td><input type="checkbox"/><br /><br /><img src="down.png" width="25px" onclick="expandRowInfo()"/></td>
 			<td>Student 1</td>
 			<td>Teacher 1</td>
 			<td>Approved</td>
@@ -31,7 +31,7 @@
 			<td>TA</td>
 			<td>12345</td>
 			<td>100%</td>
-			<td></td>
+			<!-- <td></td> -->
 		</tr>
 		<tr class="dropDownTextArea"><td colspan="8">
 			Advisor:<br /><br />
@@ -41,9 +41,10 @@
 			Tuition Number: <br />
 			Comments:<br /><br /><br />
 			Award Status:<br /><br /><br />
-		</td></tr>
-		<tr bgcolor="orange">
-			<td><input type="checkbox" checked/><br /><br /><img src="down.png" width="25px" /></td>
+		</td>
+        </tr>
+		<tr>
+			<td><input type="checkbox"/><br /><br /><img src="down.png" width="25px" /></td>
 			<td>Student 2</td>
 			<td>Teacher 2</td>
 			<td>Approved</td>
@@ -51,7 +52,6 @@
 			<td>TA</td>
 			<td>23456</td>
 			<td>100%</td>
-			<td><button>Delete</button></td>
 		</tr>
 		<tr class="dropDownTextArea"><td colspan="8">
 			Advisor:<br /><br />
@@ -61,9 +61,10 @@
 			Tuition Number: <br />
 			Comments:<br /><br /><br />
 			Award Status:<br /><br /><br />
-		</td></tr>
+		</td>
+        </tr>
 		<tr>
-			<td><input type="checkbox" /><br /><br /><img src="down.png" width="25px" /></td>
+			<td><input type="checkbox"/><br /><br /><img src="down.png" width="25px" /></td>
 			<td>Student 3</td>
 			<td>Teacher 3</td>
 			<td>Approved</td>
@@ -71,7 +72,7 @@
 			<td>TA</td>
 			<td>34567</td>
 			<td>100%</td>
-			<td></td>
+			<!-- <td></td> -->
 		</tr>
 		<tr class="dropDownTextArea"><td colspan="8">
 			Advisor:<br /><br />
@@ -81,13 +82,15 @@
 			Tuition Number: <br />
 			Comments:<br /><br /><br />
 			Award Status:<br /><br /><br />
-		</td></tr>
+		</td>
+        </tr>
+    </tbody>
 	</table>
 
 	<br /><br />
 	
-	<button id="button">SUBMIT SELECTED AWARDS</button>
-	<button id="add">Add New Student</button>
+	<button id="submit-button">SUBMIT SELECTED AWARDS</button>
+	<button id="addRow-button">Add New Student</button>
 
 	<nav class="socialmediaicons"></nav>
 	<script src="script.js"></script>
