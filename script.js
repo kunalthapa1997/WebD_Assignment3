@@ -63,6 +63,7 @@ document.getElementById("myTable").addEventListener("click", function(event) {
     if(checkBox.tagName === "INPUT" && checkBox.type === "checkbox") {
 
         let row = checkBox.parentNode.parentNode;
+        let expandedRow = checkBox.parentNode.parentNode.nextElementSibling;
 
         //change row color on click of checkbox
         if(checkBox.checked){
@@ -82,6 +83,7 @@ document.getElementById("myTable").addEventListener("click", function(event) {
             deleteButton.innerHTML = "Delete";
             deleteButton.addEventListener("click", function(){
                 row.remove();
+                expandedRow.remove();
                 counter--;
                 alert("Record Deleted Successfully");
             });
