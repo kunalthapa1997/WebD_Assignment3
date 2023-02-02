@@ -25,3 +25,11 @@ body {
   .dropDownTextArea{
     display: none;
   }
+
+  .hideHeader {
+    display: none;
+  }
+
+  .showHeader {
+    display:list-item;
+  }

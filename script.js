@@ -17,6 +17,11 @@
 // var t = new Title("CONNECT WITH ME!");
 
 let counter = 3;
+let submitButtonCounter = 0;
+
+// const table = document.querySelector("table");
+// const secondLastTh = table.querySelector('th:nth-last-child(2)');
+// const lastTH = table.querySelector("th:last-child");
 
 document.getElementById("submit-button").style.backgroundColor ="gray";
 document.getElementById("submit-button").style.pointerEvents ="none";
@@ -59,14 +64,19 @@ document.getElementById("addRow-button").addEventListener("click", function() {
 // checkbox click operation
 
 document.getElementById("myTable").addEventListener("click", function(event) {
+
     let checkBox = event.target;
+
     if(checkBox.tagName === "INPUT" && checkBox.type === "checkbox") {
 
         let row = checkBox.parentNode.parentNode;
         let expandedRow = checkBox.parentNode.parentNode.nextElementSibling;
-
+        // secondLastTh.classList.add("showHeader");
+        // lastTH.classList.add("showHeader");
         //change row color on click of checkbox
         if(checkBox.checked){
+            submitButtonCounter++;
+
             const td1 = document.createElement('td');
             row.appendChild(td1);
 
@@ -99,9 +109,18 @@ document.getElementById("myTable").addEventListener("click", function(event) {
             row.children[9].appendChild(editButton);
 
         } else {
+            submitButtonCounter--;
             row.style.backgroundColor = "white";
+
             row.removeChild(row.lastChild);
             row.removeChild(row.lastChild);
+
+            if(submitButtonCounter === 0) {
+                // secondLastTh.classList.add("hideHeader");
+                // lastTH.classList.add("hideHeader");
+                document.getElementById("submit-button").style.backgroundColor = "gray";
+                document.getElementById("submit-button").style.pointerEvents ="none";
+            }
         }
     }
 });
