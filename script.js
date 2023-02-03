@@ -43,6 +43,7 @@ document.getElementById("addRow-button").addEventListener("click", function() {
 
     let expandedRow = document.createElement("tr");
     expandedRow.innerHTML = `
+    <td colspan="8">
     Advisor:<br /><br />
     Award Details<br />
     Summer 1-2014(TA)<br />
@@ -50,6 +51,7 @@ document.getElementById("addRow-button").addEventListener("click", function() {
     Tuition Number: <br />
     Comments:<br /><br /><br />
     Award Status:<br /><br /><br />
+    </td>
     `;
 
     document.getElementById("table-rows").appendChild(expandedRow);
@@ -141,6 +143,6 @@ function expandRowInfo(event) {
         event.src = "down.png";
     } else{
         row.style.display = "table-row";
-        event.src = "up.jpeg"
+        event.src = "up.jpg"
     }
 };
